@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-center"><b>Author Registration</b></div>
+                    <div class="card-header text-center"><h4><b>Author Registration</b></h4></div>
 
                     @if(session('danger'))
                         <div class="alert alert-danger" id="id">
@@ -24,7 +24,7 @@
                         <form method="POST" action="{{ route('authorRegistrationSubmit') }}" enctype="multipart/form-data">
                             @csrf
 
-
+                            <h5 class="text-center"><b>PAPER DETAILS</b></h5>
                             <div class="form-group row">
                                 <label for="paper_id" class="col-sm-4 col-form-label text-md-right">Paper ID*</label>
                                 <div class="col-md-6">
@@ -70,7 +70,7 @@
                             </div>
 
                             <hr><br>
-
+                            <h5 class="text-center"><b>PARTICIPANT'S DETAILS</b></h5>
                             <div class="form-group row">
                                 <label for="title" class="col-sm-4 col-form-label text-md-right">Title*</label>
                                 <div class="col-md-6">
