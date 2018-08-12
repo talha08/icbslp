@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'SPA'),
+    'name' => env('APP_NAME', 'ICBSLP'),
 
     /*
     |--------------------------------------------------------------------------
@@ -79,12 +79,6 @@ return [
     */
 
     'locale' => 'en',
-
-    'locales' => [
-        'en' => 'EN',
-        'zh-CN' => '中文',
-        'es' => 'ES',
-    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -165,9 +159,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\JSONApiServiceProvider::class,
-        App\Providers\ObserverServiceProvider::class,
-        EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider::class
+
     ],
 
     /*

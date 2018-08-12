@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('{path}', function () {
-    return view('index');
-})->where('path', '(.*)');
+Route::get('/', function () {
+    return view('home.index');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/author/registration', 'AuthorRegistrationController@authorRegistration')->name('authorRegistration');
+Route::post('/author/registration', 'AuthorRegistrationController@authorRegistrationSubmit')->name('authorRegistrationSubmit');
+
+Route::get('/participant/registration', 'AuthorRegistrationController@participantRegistration')->name('participantRegistration');
+Route::post('/participant/registration', 'AuthorRegistrationController@participantRegistrationSubmit')->name('participantRegistrationSubmit');
+
+
