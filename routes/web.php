@@ -26,3 +26,9 @@ Route::get('/participant/registration', 'AuthorRegistrationController@participan
 Route::post('/participant/registration', 'AuthorRegistrationController@participantRegistrationSubmit')->name('participantRegistrationSubmit');
 
 
+
+
+Route::get('/admin/authors', 'AdminController@authorPage')->name('admin.authors');
+Route::get('/admin/participants', 'AdminController@participantPage')->name('admin.participants');
+Route::get('/admin/authorDetails/{id}', 'AdminController@authorDetails')->name('admin.authorDetails');
+Route::get('/admin/authorRegistrationDetails/{id}', 'AdminController@authorRegistrationDetails')->name('admin.authorRegistrationDetails');

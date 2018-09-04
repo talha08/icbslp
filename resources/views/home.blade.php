@@ -1,23 +1,35 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        @include('sidebar')
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                    <div class="row text-center">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    Total Authors<br>
+                                    <h3><b>{{ $authors }}</b></h3>
+                                </div>
+                            </div>
                         </div>
-                    @endif
 
-                    You are logged in!
+                        <div class="col order-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    Total Participant<br>
+                                    <h3><b>{{ $participants }}</b></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 @endsection

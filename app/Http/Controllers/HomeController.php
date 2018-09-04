@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Author;
+use App\Paper;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $papersId = Paper::pluck('author_id');
+        $authors = Author::whereIn('id',$papersId)->count();
+        $participants = Author::whereNotIn('id',$papersId)->count();
+        return view('home', compact('authors','participants'));
     }
 }
