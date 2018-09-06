@@ -112,12 +112,12 @@
     <div class="intro">
         <div class="card">
             <div class="card-header">
-                <h3 style="color:yellow">Registration Deadline</h3><br>
+                <h3 style="color:yellow">Registration Ends On</h3><br>
             </div>
             <div class="card-body">
                 <div class="clock" style="text-align:center;"></div>
             </div>
-        </div>
+        </div><br>
 
         <h2>21-22 September, 2018 </h2>
         <h1>International Conference on Bangla Speech and Language Processing</h1>
