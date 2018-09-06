@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/ionicons/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('flipclock/flipclock.css') }}">
+    <style>
+        .flip-clock-wrapper {
+            padding-left: 25%;
+        }
+    </style>
 </head>
 <body data-spy="scroll" data-target="#site-nav">
 <nav id="site-nav" class="navbar navbar-fixed-top  navbar-custom">  <!--navbar-fixed-top-->
@@ -16,9 +22,9 @@
         <div class="navbar-header">
             <!-- logo -->
             <div class="site-branding">
-                <a class="logo" href="index.html">
+                <a class="logo" href="{{ url('/') }}">
                     <!-- logo image  -->
-                    <img  src="{{ asset('assets/images/logo.png') }}"  alt="Logo"  width="90"  height="70">
+                    <img  src="{{ asset('assets/images/logo.png') }}"  alt="Logo"  width="70"  height="50">
                 </a>
             </div>
 
@@ -104,10 +110,18 @@
 
 <header id="site-header" class="site-header valign-center">
     <div class="intro">
+        <div class="card">
+            <div class="card-header">
+                <h3 style="color:yellow">Registration Deadline</h3><br>
+            </div>
+            <div class="card-body">
+                <div class="clock" style="text-align:center;"></div>
+            </div>
+        </div>
+
         <h2>21-22 September, 2018 </h2>
         <h1>International Conference on Bangla Speech and Language Processing</h1>
-        <p>Dr.  M  A  Wazed  Miah  IICT  Building  </p>
-        <p>Shahjalal University of Science and Technology</p>
+        <p>Dr.  M  A  Wazed  Miah  IICT  Building, Shahjalal University of Science and Technology</p>
         <p>Sylhet, Bangladesh</p>
         </br>
         </br>
@@ -202,7 +216,6 @@
     </div>
     </div>
 </section>
-
 
 <section id="callforpaper" class="section callforpaper">
     <div class="container">
@@ -699,16 +712,8 @@
                 of Bangla Speech Synthesis and possible research avenues that the research community can
                 address.
             </p>
-            <!--
-            <p>
-                <b>Keywords:</b> annotation, tagging, noun, verb, adjective, adverb, postposition, Bangla, part-of-speech, morphology, syntax, semantics, context
-            </p>
-            -->
-
         </div>
-
     </section>
-
 </section>
 
 <section id="registration" class="section registration">
@@ -736,27 +741,16 @@
                     <tr>
                         <th class="tg-2thk" rowspan="3"></th>
                         <th class="tg-pp9q" colspan="4">Paper/Poster</th>
-                        <!--<th class="tg-jdmv" colspan="4">Poster</th>-->
                     </tr>
                     <tr>
                         <td class="tg-vkov" colspan="2">IEEE Member </td>
                         <td class="tg-vkov" colspan="2">Non IEEE Member</td>
-                        <!--
-                        <td class="tg-l5iw" colspan="2">IEEE Member </td>
-                        <td class="tg-l5iw" colspan="2">Non IEEE Member</td>
-                        -->
                     </tr>
                     <tr>
                         <td class="tg-yhvb">Student</td>
                         <td class="tg-yhvb">Professional</td>
                         <td class="tg-yhvb">Student</td>
                         <td class="tg-yhvb">Professional</td>
-                        <!--
-                        <td class="tg-ate8">Student</td>
-                        <td class="tg-ate8">Professional</td>
-                        <td class="tg-ate8">Student</td>
-                        <td class="tg-ate8">Professional</td>
-                        -->
                     </tr>
                     <tr>
                         <td class="tg-9fhq">Local</td>
@@ -764,12 +758,6 @@
                         <td class="tg-s6z2">BDT 3000</td>
                         <td class="tg-s6z2">BDT 2000</td>
                         <td class="tg-s6z2"> BDT4000</td>
-                        <!--
-                        <td class="tg-baqh">BDT 2000</td>
-                        <td class="tg-baqh">BDT 3000</td>
-                        <td class="tg-baqh">BDT 2000</td>
-                        <td class="tg-baqh">BDT4000</td>
-                        -->
                     </tr>
                     <tr>
                         <td class="tg-q3eh">Foreign</td>
@@ -777,12 +765,6 @@
                         <td class="tg-baqh">USD 200  </td>
                         <td class="tg-baqh">USD 100  </td>
                         <td class="tg-baqh">USD 250</td>
-                        <!--
-                        <td class="tg-baqh">USD 100</td>
-                        <td class="tg-baqh">USD 200</td>
-                        <td class="tg-baqh">USD 100</td>
-                        <td class="tg-baqh">USD 250</td>
-                        -->
                     </tr>
                 </table>
             </center>
@@ -794,90 +776,6 @@
     </div>
 </section>
 
-<!--
-<section id="registration" class="section registration">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="section-title">Registration &amp; Pricing</h3>
-            </div>
-        </div>
-
-        <form action="#" id="registration-form">
-            <div class="row">
-                <div class="col-md-12" id="registration-msg" style="display:none;">
-                    <div class="alert"></div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="First Name" id="fname" name="fname" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Last Name" id="lname" name="lname" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Phone" id="cell" name="cell" required>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Address" id="address" name="address" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Zip Code" id="zip" name="zip" required>
-                    </div>
-
-                    <div class="form-group">
-                        <select class="form-control" name="city" id="city" required>
-                            <option readonly>City</option>
-                            <option>City Name 1</option>
-                            <option>City Name 2</option>
-                            <option>City Name 3</option>
-                            <option>City Name 4</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <select class="form-control" name="program" id="program" required>
-                            <option readonly>Select Your Program</option>
-                            <option>Program Name 1</option>
-                            <option>Program Name 2</option>
-                            <option>Program Name 3</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt20">
-                <button type="submit" class="btn btn-black" id="registration-submit-btn">Submit</button>
-            </div>
-        </form>
-    </div>
-</section>
--->
-
-<!--
-<section id="contribution" class="section bg-image-2 contribution">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="text-uppercase mt0 font-400">Submit Your Contribution Work</h3>
-
-                <p>You've inspired new consumer, racked up click-thru's, blown-up brand awareness. We can't give you back the weekends you worked, or erase the pain of being forced to make the logo bigger. But if you submit your best work.</p>
-
-                <a class="btn btn-white" href="#">Submit</a>
-            </div>
-        </div>
-    </div>
-</section>
--->
 <section id="dates" class="section dates">
     <div class="container">
         <div class="row">
@@ -1166,236 +1064,21 @@
             </div>
         </div>
     </div>
-    <p></p>
-    <p></p>
-    <p></p>
     <section id="travel" class="section travel">
         <div class="container">
             <h3 class="section-title">Travel</h3>
-            <p></p>
-            <p></p>
-            <p></p>
             <p>TBA</p>
         </div>
     </section>
-    <p></p>
-    <p></p>
-    <p></p>
+
     <section id="accomodation" class="section accomodation">
         <div class="container">
             <h3 class="section-title">Accomodation</h3>
-            <p></p>
-            <p></p>
-            <p></p>
             <p>TBA</p>
         </div>
     </section>
 </section>
 
-<!--
-<section id="contacts" class="section contact">
-    <div class="container">
-        <h3 class="section-title">Contacts</h3>
-        <ul>
-            <li>Phone: +880 821 713491/ 714479 Ext. 803</li>
-            <li>Mail: <a href="mailto:secretary@icbslp.org">secretary@icbslp.org</a> or <a href="mailto:icbslp2018@sust.edu">icbslp2018@sust.edu</a></li>
-            <li>Facebook: <a href="https://fb.me/icbslp2018">https://fb.me/icbslp2018</a></li>
-
-        </ul>
-    </div>
-</section>
--->
-<!--
-<section id="partner" class="section partner">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="section-title">Event Partner</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <a class="partner-box partner-box-1"></a>
-            </div>
-            <div class="col-sm-3">
-                <a class="partner-box partner-box-2"></a>
-            </div>
-            <div class="col-sm-3">
-                <a class="partner-box partner-box-3"></a>
-            </div>
-            <div class="col-sm-3">
-                <a class="partner-box partner-box-4"></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-3">
-                <a class="partner-box partner-box-5"></a>
-            </div>
-            <div class="col-sm-3">
-                <a class="partner-box partner-box-6"></a>
-            </div>
-            <div class="col-sm-3">
-                <a class="partner-box partner-box-7"></a>
-            </div>
-            <div class="col-sm-3">
-                <a class="partner-box partner-box-8"></a>
-            </div>
-        </div>
-</section>
--->
-
-<!--
-<section id="faq" class="section faq">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="section-title">Event FAQs</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> What is the price of the ticket ?</a>
-                            </h4>
-                        </div>
-
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                <h3>Hello</h3>
-                                <p>Lorem Ipsum</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <h4 class="panel-title">
-                                <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> What is included in my ticket ?</a>
-                            </h4>
-                        </div>
-
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body">Hello</div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title">
-                                <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> Office address ?</a>
-                            </h4>
-                        </div>
-
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-body">Hello</div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingFour">
-                            <h4 class="panel-title">
-                                <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> How should I dress ?</a>
-                            </h4>
-                        </div>
-
-                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                            <div class="panel-body">Hello</div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingFive">
-                            <h4 class="panel-title">
-                                <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> I have specific questions that are not addressed here. Who can help me ?</a>
-                            </h4>
-                        </div>
-
-                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                            <div class="panel-body">Hello</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
--->
-
-<!--
-<section id="photos" class="section photos">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="section-title">Photos</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="grid">
-
-                    <li class="grid-item grid-item-sm-6">
-                        <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-1.jpg">
-                    </li>
-
-                    <li class="grid-item grid-item-sm-3">
-                        <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-2.jpg">
-                    </li>
-
-                    <li class="grid-item grid-item-sm-3">
-                        <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-3.jpg">
-                    </li>
-
-                    <li class="grid-item grid-item-sm-3">
-                        <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-5.jpg">
-                    </li>
-
-                    <li class="grid-item grid-item-sm-3">
-                        <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-6.jpg">
-                    </li>
-
-                    <li class="grid-item grid-item-sm-3">
-                        <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-7.jpg">
-                    </li>
-
-                    <li class="grid-item grid-item-sm-3">
-                        <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-8.jpg">
-                    </li>
-
-                    <li class="grid-item grid-item-sm-3">
-                        <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-2.jpg">
-                    </li>
-
-                    <li class="grid-item grid-item-sm-3">
-                        <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-3.jpg">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
--->
-
-<!--
-<section id="location" class="section location">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <h3 class="section-title">Event Location</h3>
-                <address>
-                    <p>Eardenia<br> The Grand Hall<br> House # 08, Road #52, Street<br> Phone: +1159t3764<br> Email: example@mail.com</p>
-                </address>
-            </div>
-            <div class="col-sm-9">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96706.50013548559!2d-78.9870674333782!3d40.76030630398601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sbd!4v1436299406518" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</section>
--->
 <footer class="site-footer">
     <div class="container">
         <div class="row">
@@ -1407,9 +1090,43 @@
 </footer>
 
 <!-- script -->
-<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script>
 <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('flipclock/flipclock.js') }}"></script>
 <script src="{{ asset('bower_components/smooth-scroll/dist/js/smooth-scroll.min.js') }}"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
+<script type="text/javascript">
+  var clock;
+
+  $(document).ready(function() {
+    // Set dates.
+    var futureDate  = new Date("September 11, 2018 11:59 PM EDT");
+    var currentDate = new Date();
+
+    // Calculate the difference in seconds between the future and current date
+    var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+    // Calculate day difference and apply class to .clock for extra digit styling.
+    function dayDiff(first, second) {
+      return (second-first)/(1000*60*60*24);
+    }
+
+    if (dayDiff(currentDate, futureDate) < 100) {
+      $('.clock').addClass('twoDayDigits');
+    } else {
+      $('.clock').addClass('threeDayDigits');
+    }
+
+    if(diff < 0) {
+      diff = 0;
+    }
+
+    // Instantiate a coutdown FlipClock
+    clock = $('.clock').FlipClock(diff, {
+      clockFace: 'DailyCounter',
+      countdown: true
+    });
+  });
+</script>
 </body>
 </html>
