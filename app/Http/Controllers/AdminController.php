@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Author;
 use App\Paper;
+use App\Poster;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -22,6 +23,11 @@ class AdminController extends Controller
         return view('participants', compact('authors'));
     }
 
+    public function posterPage(){
+        $posterId = Poster::pluck('author_id');
+        $authors = Author::whereIn('id',$posterId)->get();
+        return view('posters', compact('authors'));
+    }
 
     public function authorRegistrationDetails($id){
         $author = Author::with('paper')->findOrFail($id);

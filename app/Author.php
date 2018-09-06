@@ -11,4 +11,9 @@ class Author extends Model
     {
         return $this->hasOne(Paper::class, 'author_id', 'id');
     }
+
+    public function poster()
+    {
+        return $this->hasOne(Poster::class, 'author_id', 'id');
+    }
 }

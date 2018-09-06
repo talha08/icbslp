@@ -25,10 +25,12 @@ Route::post('/author/registration', 'AuthorRegistrationController@authorRegistra
 Route::get('/participant/registration', 'AuthorRegistrationController@participantRegistration')->name('participantRegistration');
 Route::post('/participant/registration', 'AuthorRegistrationController@participantRegistrationSubmit')->name('participantRegistrationSubmit');
 
-
+Route::get('/poster/registration', 'AuthorRegistrationController@posterRegistration')->name('posterRegistration');
+Route::post('/poster/registration', 'AuthorRegistrationController@posterRegistrationSubmit')->name('posterRegistrationSubmit');
 
 
 Route::get('/admin/authors', 'AdminController@authorPage')->name('admin.authors');
 Route::get('/admin/participants', 'AdminController@participantPage')->name('admin.participants');
+Route::get('/admin/posters', 'AdminController@posterPage')->name('admin.posters');
 Route::get('/admin/authorDetails/{id}', 'AdminController@authorDetails')->name('admin.authorDetails');
 Route::get('/admin/authorRegistrationDetails/{id}', 'AdminController@authorRegistrationDetails')->name('admin.authorRegistrationDetails');

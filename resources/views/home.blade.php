@@ -11,7 +11,7 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-body">
-                                    Total Authors<br>
+                                     Authors(Paper)<br>
                                     <h3><b>{{ $authors }}</b></h3>
                                 </div>
                             </div>
@@ -20,7 +20,16 @@
                         <div class="col order-12">
                             <div class="card">
                                 <div class="card-body">
-                                    Total Participant<br>
+                                    Authors(Poster)<br>
+                                    <h3><b>{{ $posters }}</b></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col order-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    Participants<br>
                                     <h3><b>{{ $participants }}</b></h3>
                                 </div>
                             </div>

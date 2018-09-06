@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Author;
 use App\Paper;
+use App\Poster;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,8 +14,6 @@ class AuthorRegistrationController extends Controller
     {
         return view('registration.author');
     }
-
-
 
     public function authorRegistrationSubmit(Request $request)
     {
@@ -33,12 +32,12 @@ class AuthorRegistrationController extends Controller
 
 
 
+
+
     public function participantRegistration()
     {
         return view('registration.participant');
     }
-
-
 
     public function participantRegistrationSubmit(Request $request)
     {
@@ -49,6 +48,33 @@ class AuthorRegistrationController extends Controller
             return redirect()->back()->with('danger', 'Something Went Wrong!');
         }
     }
+
+
+
+
+
+
+    public function posterRegistration()
+    {
+        return view('registration.poster');
+    }
+
+    public function posterRegistrationSubmit(Request $request)
+    {
+        try{
+            $author = $this->authorCreate($request);
+            $data = $request->only([
+                'poster_title','poster_authors'
+            ]);
+            $data['author_id'] = $author->id;
+            Poster::create($data);
+            return redirect()->back()->with('success', 'Form Submitted Successfully!');
+        }catch(\Exception $ex){
+            return redirect()->back()->with('danger', 'Something Went Wrong!');
+        }
+    }
+
+
 
 
 
@@ -72,8 +98,6 @@ class AuthorRegistrationController extends Controller
         $author = Author::create($data);
         return $author;
     }
-
-
 
 
     public function saveFile($file, $uploadPath)

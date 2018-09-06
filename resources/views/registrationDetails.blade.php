@@ -26,6 +26,16 @@
                                 </div>
                             </div>
                             <hr>
+                        @elseif($author->poster)
+                            <div class="card">
+                                <div class="card-header text-center">Poster Information</div>
+                                <div class="card-body">
+                                    <b>WebID:</b> {{ $author->poster->id }} <br>
+                                    <b>Poster Title:</b> {{ $author->poster->poster_title }} <br>
+                                    <b>Poster Authors:</b> {{ $author->poster->poster_authors }} <br>
+                                </div>
+                            </div>
+                            <hr>
                         @endif
                             <div class="card">
                                 <div class="card-header text-center">Author Information</div>
@@ -47,12 +57,10 @@
                                     <div class="card">
                                         <div class="card-header text-center">Payment Slip</div>
                                         <div class="card-body">
-                                            {{--<img src="{{ asset('storage/app/'.$author->payment_receipt)}}"--}}
-                                                 {{--class="center"--}}
-                                                 {{--alt="Payment Slip Not Found/ Image Could Not be Loaded"--}}
-                                                 {{--style="width:100%; max-width:300px;">--}}
-                                            <img src="{{ sto('app/public/$author->payment_receipt')  }}" alt="dd">
-
+                                            <img src="{{ asset('storage/app/'.$author->payment_receipt)}}"
+                                                 class="center"
+                                                 alt="Payment Slip Not Found/ Image Could Not be Loaded"
+                                                 style="width:100%; max-width:300px;">
                                         </div>
                                     </div><br>
                                     @endif

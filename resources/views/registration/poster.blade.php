@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-center"><h4><b>Author(Paper) Registration</b></h4></div>
+                    <div class="card-header text-center"><h4><b>Author(Poster) Registration</b></h4></div>
 
                     @if(session('danger'))
                         <div class="alert alert-danger" id="id">
@@ -21,33 +21,20 @@
 
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('authorRegistrationSubmit') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('posterRegistrationSubmit') }}" enctype="multipart/form-data">
                             @csrf
 
-                            <h5 class="text-center"><b>PAPER DETAILS</b></h5>
-                            <div class="form-group row">
-                                <label for="paper_id" class="col-sm-4 col-form-label text-md-right">Paper ID*</label>
-                                <div class="col-md-6">
-                                    <input id="paper_id" type="text"
-                                           class="form-control{{ $errors->has('paper_id') ? ' is-invalid' : '' }}"
-                                           name="paper_id"  required autofocus>
-                                    @if ($errors->has('paper_id'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('paper_id') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
+                            <h5 class="text-center"><b>Poster Details</b></h5>
 
                             <div class="form-group row">
-                                <label for="paper_title" class="col-sm-4 col-form-label text-md-right">Paper Title*</label>
+                                <label for="poster_title" class="col-sm-4 col-form-label text-md-right">Poster Title*</label>
                                 <div class="col-md-6">
-                                    <input id="paper_title" type="text"
-                                           class="form-control{{ $errors->has('paper_title') ? ' is-invalid' : '' }}"
-                                           name="paper_title"  required autofocus>
-                                    @if ($errors->has('paper_title'))
+                                    <input id="poster_title" type="text"
+                                           class="form-control{{ $errors->has('poster_title') ? ' is-invalid' : '' }}"
+                                           name="poster_title"  required autofocus>
+                                    @if ($errors->has('poster_title'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('paper_title') }}</strong>
+                                        <strong>{{ $errors->first('poster_title') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -56,14 +43,16 @@
 
 
                             <div class="form-group row">
-                                <label for="paper_authors" class="col-sm-4 col-form-label text-md-right">Paper Author(s)*</label>
+                                <label for="paper_authors" class="col-sm-4 col-form-label text-md-right">
+                                    Poster Author(s)*
+                                </label>
                                 <div class="col-md-6">
-                                    <input id="paper_authors" type="text"
-                                           class="form-control{{ $errors->has('paper_authors') ? ' is-invalid' : '' }}"
-                                           name="paper_authors"  required autofocus>
-                                    @if ($errors->has('paper_authors'))
+                                    <input id="poster_authors" type="text"
+                                           class="form-control{{ $errors->has('poster_authors') ? ' is-invalid' : '' }}"
+                                           name="poster_authors"  required autofocus>
+                                    @if ($errors->has('poster_authors'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('paper_authors') }}</strong>
+                                        <strong>{{ $errors->first('poster_authors') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -449,7 +438,7 @@
                                 <div class="col-md-6">
                                     <input id="IEEE_id" type="text"
                                            class="form-control{{ $errors->has('IEEE_id') ? ' is-invalid' : '' }}"
-                                           name="IEEE_id"  required autofocus>
+                                           name="IEEE_id" autofocus>
                                     @if ($errors->has('IEEE_id'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('IEEE_id') }}</strong>
